@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "624912983286",
+    "firebase_url": "https://fir-dbentegration-default-rtdb.firebaseio.com",
+    "project_id": "fir-dbentegration",
+    "storage_bucket": "fir-dbentegration.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:624912983286:android:752426b2e717026fbf78d7",
+        "android_client_info": {
+          "package_name": "com.example.firebasedbentegration"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "624912983286-1p69t1c9oud76nvk4sqtt20n0ak3lup2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtxPmI2aFU9wgkZq9koHQopBsRk0Ln970"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "624912983286-1p69t1c9oud76nvk4sqtt20n0ak3lup2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:624912983286:android:66cb97f7ca450b2bbf78d7",
+        "android_client_info": {
+          "package_name": "com.example.firebaserealtimedatabaseentegration"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "624912983286-1p69t1c9oud76nvk4sqtt20n0ak3lup2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtxPmI2aFU9wgkZq9koHQopBsRk0Ln970"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "624912983286-1p69t1c9oud76nvk4sqtt20n0ak3lup2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CustomButtonStyle">
+        <item name="android:typeface">monospace</item>
+        <item name="android:textSize">15pt</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:background">#C62B74</item>
+    </style>
+</resources>
