@@ -4,6 +4,8 @@ import android.os.Parcelable
 import com.example.firebasedbentegration.extensions.addTL
 import kotlinx.parcelize.Parcelize
 
+
+
 data class Product(
     val productName: String,
     val productID: String,
@@ -20,6 +22,12 @@ data class Product(
         return productPrice.addTL()
     }
 }
+
+
+data class ImagesModel(
+    val images: ArrayList<String>? = ArrayList(),
+)
+
 
 data class ProductImages(
     val image1: String,

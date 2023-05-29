@@ -10,25 +10,33 @@
         android:name="com.example.firebaserealtimedatabaseentegration.views.HomeFragment"
         android:label="HomeFragment"
         tools:layout="@layout/fragment_home">
+
         <action
             android:id="@+id/action_homeFragment_to_basketFragment"
             app:destination="@+id/basketFragment">
-<!--            <argument-->
-<!--                android:name="productList"-->
-<!--                app:argType="com.example.firebaserealtimedatabaseentegration.data.Product[]" />-->
+            <!--            <argument-->
+            <!--                android:name="productList"-->
+            <!--                app:argType="com.example.firebaserealtimedatabaseentegration.data.Product[]" />-->
         </action>
         <action
             android:id="@+id/action_homeFragment_to_productDetailFragment"
-            app:destination="@id/productDetailFragment" />
+            app:destination="@id/productDetailFragment">
+<!--            <argument-->
+<!--                android:name="product"-->
+<!--                app:argType="com.example.firebaserealtimedatabaseentegration.data.Product" />-->
+            <argument
+                android:name="productId"
+                app:argType="string"/>
+        </action>
     </fragment>
     <fragment
         android:id="@+id/basketFragment"
         android:name="com.example.firebaserealtimedatabaseentegration.views.BasketFragment"
         android:label="BasketFragment"
         tools:layout="@layout/fragment_basket">
-<!--        <argument-->
-<!--            android:name="productList"-->
-<!--            app:argType="com.example.firebaserealtimedatabaseentegration.data.Product[]" />-->
+        <!--        <argument-->
+        <!--            android:name="productList"-->
+        <!--            app:argType="com.example.firebaserealtimedatabaseentegration.data.Product[]" />-->
         <action
             android:id="@+id/action_basketFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
@@ -38,6 +46,13 @@
         android:name="com.example.firebaserealtimedatabaseentegration.views.ProductDetailFragment"
         android:label="ProductDetailFragment"
         tools:layout="@layout/fragment_product_detail">
+
+        <argument
+            android:name="productId"
+            app:argType="string"/>
+<!--        <argument-->
+<!--            android:name="product"-->
+<!--            app:argType="com.example.firebaserealtimedatabaseentegration.data.Product" />-->
         <action
             android:id="@+id/action_productDetailFragment_to_homeFragment"
             app:destination="@id/homeFragment" />

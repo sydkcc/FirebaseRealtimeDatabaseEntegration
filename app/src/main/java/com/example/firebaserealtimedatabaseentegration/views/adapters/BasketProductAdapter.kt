@@ -4,13 +4,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.firebasedbentegration.extensions.addTL
 import com.example.firebaserealtimedatabaseentegration.data.Product
+import com.example.firebaserealtimedatabaseentegration.databinding.ItemBasketProductViewBinding
 import com.example.firebaserealtimedatabaseentegration.databinding.ItemProductViewBinding
 
 
-class HomeProductAdapter(
+class BasketProductAdapter(
     private val items: List<Product>,
-    private val onClickAddCart: (Product) -> Unit,
     private val onClickProductDetail: (Product) -> Unit
 //    val clickListener: OnClickListener,
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -18,7 +19,7 @@ class HomeProductAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return ItemHolder(
-            ItemProductViewBinding.inflate(
+            ItemBasketProductViewBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
@@ -36,18 +37,14 @@ class HomeProductAdapter(
         return items.size
     }
 
-    inner class ItemHolder internal constructor(var binding: ItemProductViewBinding) :
+    inner class ItemHolder internal constructor(var binding: ItemBasketProductViewBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(mapItem: Product) {
             binding.product = mapItem
+            binding.price = mapItem.productPrice.addTL()
             binding.image.setOnClickListener {
                 onClickProductDetail?.invoke(mapItem)
-            }
-
-
-            binding.addToCart.setOnClickListener {
-                onClickAddCart?.invoke(mapItem)
             }
 
 

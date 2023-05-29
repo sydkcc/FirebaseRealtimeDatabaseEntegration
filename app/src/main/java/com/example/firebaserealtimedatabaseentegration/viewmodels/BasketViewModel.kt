@@ -2,5 +2,5 @@ package com.example.firebaserealtimedatabaseentegration.viewmodels
 
 import androidx.lifecycle.ViewModel
 
-class BasketViewModel : ViewModel() {
+class BasketViewModel : BaseViewModel() {
 }
