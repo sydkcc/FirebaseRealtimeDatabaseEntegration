@@ -15,13 +15,7 @@ import com.google.firebase.database.ValueEventListener
 import kotlinx.coroutines.launch
 
 class HomeViewModel : BaseViewModel() {
-
-
-
-
-
-
     fun addToCart(id: String){
-        myRef.child("product$id/isInsideBasket").setValue(1)
+        myRef.child("product$id/isInsideBasket").setValue("1")
     }
 }

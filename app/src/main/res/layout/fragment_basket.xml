@@ -15,23 +15,23 @@
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/white">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/header"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintWidth_default="percent"
-            app:layout_constraintWidth_percent=".1"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
                 android:id="@+id/back"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_margin="@dimen/app_margin_mini"
+                android:padding="@dimen/app_margin_mini"
                 android:src="@drawable/back_button"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -42,6 +42,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/app_margin_mini"
+                android:text="@string/basket_title"
+                android:textSize="@dimen/app_basket_name_text_size"
                 app:layout_constraintBottom_toTopOf="@+id/basketCount"
                 app:layout_constraintStart_toEndOf="@+id/back"
                 app:layout_constraintTop_toTopOf="parent"
@@ -53,32 +55,43 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/app_margin_mini"
                 android:text="@{count}"
+                android:textSize="@dimen/app_basket_name_text_size"
+
                 app:layout_constraintStart_toEndOf="@+id/back"
                 app:layout_constraintTop_toBottomOf="@+id/basketTitle"
                 tools:text="3 ürün" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rcyBasketProductList"
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/rcyBasketProductListCardView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintWidth_default="percent"
-            app:layout_constraintWidth_percent=".8"
             android:layout_margin="@dimen/app_general_margin"
-            android:orientation="vertical"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_marginBottom="75dp"
+            android:background="@color/white"
+            android:elevation="@dimen/app_margin_mini"
+            app:cardCornerRadius="@dimen/app_margin_mini"
             app:layout_constraintBottom_toTopOf="@+id/priceContainer"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/header"
-            tools:itemCount="10"
-            tools:listitem="@layout/item_basket_product_view" />
+            app:strokeColor="@color/gray"
+            app:strokeWidth="0.5dp">
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcyBasketProductList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/app_general_margin"
+                android:adjustViewBounds="true"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="5"
+                tools:listitem="@layout/item_basket_product_view" />
+        </com.google.android.material.card.MaterialCardView>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/priceContainer"
-            app:layout_constraintWidth_default="percent"
-            app:layout_constraintWidth_percent=".1"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:orientation="horizontal"
@@ -88,6 +101,7 @@
             app:layout_constraintStart_toStartOf="parent">
 
             <TextView
+                android:id="@+id/priceText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/app_margin_large"
@@ -99,13 +113,13 @@
                 tools:text="1234.05 TL" />
 
             <Button
-                android:id="@+id/confirmBasket"
+                android:id="@+id/clearBasket"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/confirm_basket"
-                android:paddingHorizontal="@dimen/app_margin_Xlarge"
                 android:layout_margin="@dimen/app_margin_large"
                 android:background="@drawable/button_background"
+                android:paddingHorizontal="@dimen/app_margin_Xlarge"
+                android:text="@string/clear_basket"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

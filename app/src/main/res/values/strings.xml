@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">FirebaseRealtimeDatabaseEntegration</string>
     <string name="add_to_cart">Sepete Ekle</string>
-    <string name="confirm_basket">Sepete Onayla</string>
+    <string name="clear_basket">Sepeti Temizle</string>
     <string name="basket_title">Sepetim</string>
+    <string name="home_search_hint">Marka, ürün veya hizmet arayın</string>
 </resources>

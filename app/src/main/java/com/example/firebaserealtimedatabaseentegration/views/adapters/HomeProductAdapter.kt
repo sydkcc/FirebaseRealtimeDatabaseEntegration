@@ -6,16 +6,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.firebaserealtimedatabaseentegration.data.Product
 import com.example.firebaserealtimedatabaseentegration.databinding.ItemProductViewBinding
-
-
 class HomeProductAdapter(
     private val items: List<Product>,
     private val onClickAddCart: (Product) -> Unit,
     private val onClickProductDetail: (Product) -> Unit
-//    val clickListener: OnClickListener,
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return ItemHolder(
             ItemProductViewBinding.inflate(
@@ -45,18 +40,9 @@ class HomeProductAdapter(
                 onClickProductDetail?.invoke(mapItem)
             }
 
-
             binding.addToCart.setOnClickListener {
                 onClickAddCart?.invoke(mapItem)
             }
-
-
         }
-
     }
-
-    interface OnClickListener {
-        fun onOtherProductsClicked(mapItem: Product)
-    }
-
 }

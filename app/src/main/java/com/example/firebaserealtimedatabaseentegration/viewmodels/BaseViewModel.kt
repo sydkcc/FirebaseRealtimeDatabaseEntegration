@@ -15,10 +15,8 @@ import kotlinx.coroutines.launch
 open class BaseViewModel :ViewModel() {
 
     val productList = MutableLiveData<List<Product>>()
-    var products : Array<Product> = arrayOf()
     val database = FirebaseDatabase.getInstance()
     val myRef = database.getReference("products")
-
 
     fun fetchObjects() {
         var data: MutableList<Product> = mutableListOf()
@@ -34,9 +32,12 @@ open class BaseViewModel :ViewModel() {
                     val productRate = productDict?.get("productRate") as? Float
                     val productImagesDict = productDict?.get("productImages") as? Map<*, *>
                     val productID = productDict?.get("productID") as? String
+                    val productIsInsideBasket = productDict?.get("isInsideBasket") as? String
                     val productDescription = productDict?.get("productDescription") as? String
                     val productQuantity = productDict?.get("productQuantity") as? Int
                     val productInfoList = productDict?.get("productInfoList") as? Map<*, *>
+
+
 
                     val productImages = ProductImages(
                         image1 = productImagesDict?.get("image1") as? String ?: "",
@@ -50,13 +51,12 @@ open class BaseViewModel :ViewModel() {
                         productImages = productImages,
                         productDescription = productDescription ?: "",
                         productQuantity = productQuantity ?: 0,
-                        isInsideBasket = false,
+                        isInsideBasket = productIsInsideBasket ?: "0",
                         productInfoList = productInfoList ?: mutableMapOf<Any?, Any?>()
                     )
                     data.add(product)
                 }
                 filteredItems = data
-                products = filteredItems.toTypedArray()
 
                 Log.d("Damacana", filteredItems.first().productName)
                 Log.d("Damacana2", filteredItems.size.toString())

@@ -1,11 +1,9 @@
-package com.example.firebasedbentegration.adapters
+package com.example.firebaserealtimedatabaseentegration.adapters
 
 import android.view.View
 import android.widget.ImageView
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
-import com.bumptech.glide.request.FutureTarget
 import com.bumptech.glide.request.RequestFutureTarget
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 
@@ -17,15 +15,6 @@ fun bindIsGone(view: View, isGone: Boolean) {
         View.VISIBLE
     }
 }
-
-
-
-//@BindingAdapter("aspectRatio")
-//fun setAspectRatio(imageView: ImageView, aspectRatio: Float) {
-//    val layoutParams = imageView.layoutParams as ConstraintLayout.LayoutParams
-//    layoutParams.dimensionRatio = "H,$aspectRatio"
-//    imageView.layoutParams = layoutParams
-//}
 
 @BindingAdapter("aspectRatio")
 fun setAspectRatio(imageView: ImageView, aspectRatio: String) {

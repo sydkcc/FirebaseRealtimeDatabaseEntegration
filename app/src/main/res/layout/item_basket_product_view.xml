@@ -6,6 +6,7 @@
         <variable
             name="price"
             type="String" />
+
         <variable
             name="product"
             type="com.example.firebaserealtimedatabaseentegration.data.Product" />
@@ -33,22 +34,21 @@
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:adjustViewBounds="true"
-                android:scaleType="centerCrop"
+                android:scaleType="fitCenter"
                 android:src="@drawable/deneme_product_image" />
         </androidx.cardview.widget.CardView>
 
 
         <TextView
             android:id="@+id/name"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_margin="@dimen/app_margin_large"
             android:ellipsize="end"
             android:maxLines="3"
             android:text="@{product.productName}"
             android:textSize="@dimen/app_basket_name_text_size"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/priceTextView"
+            app:layout_constraintStart_toEndOf="@+id/image"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Stradivarius Kadın Kumaş Çapraz Askılı Çanta" />
 
@@ -62,5 +62,14 @@
             app:layout_constraintStart_toEndOf="@+id/image"
             app:layout_constraintTop_toBottomOf="@+id/name"
             tools:text="1234.05 TL" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.3dp"
+            android:layout_margin="@dimen/app_margin_mini"
+            android:background="@color/light_gray"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
