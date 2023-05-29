@@ -3,6 +3,8 @@ package com.example.firebaserealtimedatabaseentegration.viewmodels
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.map
+import androidx.lifecycle.switchMap
 import androidx.lifecycle.viewModelScope
 import com.example.firebaserealtimedatabaseentegration.data.Product
 import com.example.firebaserealtimedatabaseentegration.data.ProductImages
@@ -14,11 +16,13 @@ import kotlinx.coroutines.launch
 
 class HomeViewModel : ViewModel() {
     val productList = MutableLiveData<List<Product>>()
+    var products : Array<Product> = arrayOf()
+    val database = FirebaseDatabase.getInstance()
+    val myRef = database.getReference("products")
+
 
 
     fun fetchObjects() {
-        val database = FirebaseDatabase.getInstance()
-        val myRef = database.getReference("products")
         var data: MutableList<Product> = mutableListOf()
         var filteredItems: MutableList<Product> = mutableListOf()
         myRef.addListenerForSingleValueEvent(object : ValueEventListener {
@@ -54,6 +58,7 @@ class HomeViewModel : ViewModel() {
                     data.add(product)
                 }
                 filteredItems = data
+                products = filteredItems.toTypedArray()
 
                 Log.d("Damacana", filteredItems.first().productName)
                 Log.d("Damacana2", filteredItems.size.toString())
@@ -68,5 +73,9 @@ class HomeViewModel : ViewModel() {
             }
         })
 
+    }
+
+    fun addToCart(id: Int){
+        myRef.child("product$id/isInsideBasket").setValue(1)
     }
 }

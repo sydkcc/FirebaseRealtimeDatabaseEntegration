@@ -1,4 +1,6 @@
-package com.example.firebasedbentegration.views
+package com.example.firebaserealtimedatabaseentegration.views
 
-class ProductDetailFragment {
+import androidx.fragment.app.Fragment
+
+class ProductDetailFragment : Fragment() {
 }

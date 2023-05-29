@@ -1,8 +1,10 @@
 package com.example.firebaserealtimedatabaseentegration.data
 
+import android.os.Parcelable
 import com.example.firebasedbentegration.extensions.addTL
+import kotlinx.parcelize.Parcelize
 
-data class Product (
+data class Product(
     val productName: String,
     val productID: String,
     val productPrice: Double,
@@ -11,10 +13,10 @@ data class Product (
     val productDescription: String,
     val productQuantity: Int,
     var isInsideBasket: Boolean,
-    val productInfoList: Map<*,*>,
+    val productInfoList: Map<*, *>,
 
-    ){
-    fun getPrice(): String{
+    )  {
+    fun getPrice(): String {
         return productPrice.addTL()
     }
 }
