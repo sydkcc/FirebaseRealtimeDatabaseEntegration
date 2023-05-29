@@ -31,9 +31,6 @@ class BasketFragment : Fragment() {
         viewModel.productList.observe(viewLifecycleOwner) { productList ->
 
             var filteredList = productList.filter { it.isInsideBasket == "1" }
-            Log.d("LIVEDATA", filteredList.size.toString())
-
-
 
             if (filteredList.isNotEmpty()) {
                 binding.price = filteredList.map { it.productPrice }.sum().addTL()
@@ -52,8 +49,9 @@ class BasketFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.back.setOnClickListener {
-            val action = BasketFragmentDirections.actionBasketFragmentToHomeFragment()
-            findNavController().navigate(action)
+//            val action = BasketFragmentDirections.actionBasketFragmentToHomeFragment()
+//            findNavController().navigate(action)
+            findNavController().popBackStack()
         }
 
         binding.clearBasket.setOnClickListener {

@@ -12,6 +12,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
+        android:layout_marginVertical="@dimen/app_general_margin_medium"
         android:layout_height="wrap_content">
 
         <ImageView
@@ -31,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/app_general_margin"
             android:ellipsize="end"
-            android:maxLines="2"
+            android:maxLines="1"
             android:text="@{product.productName}"
             android:textColor="@color/black"
             android:textSize="15sp"

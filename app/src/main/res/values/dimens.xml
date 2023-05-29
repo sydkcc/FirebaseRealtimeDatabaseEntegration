@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="app_general_margin">12dp</dimen>
+    <dimen name="app_general_margin_medium">15dp</dimen>
     <dimen name="app_margin_mini">8dp</dimen>
     <dimen name="app_margin_large">20dp</dimen>
     <dimen name="app_margin_Xlarge">36dp</dimen>
