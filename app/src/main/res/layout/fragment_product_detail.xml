@@ -1,53 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
-        <variable
-            name="productID"
-            type="String" />
-
-        <variable
-            name="price"
-            type="String" />
-
         <variable
             name="product"
             type="com.example.firebaserealtimedatabaseentegration.data.Product" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/viewpager"
-            android:layout_width="match_parent"
-            android:layout_height="350dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/indicator"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <me.relex.circleindicator.CircleIndicator
-            android:id="@+id/indicator"
-            android:layout_width="match_parent"
-            android:layout_height="15dp"
-            android:elevation="4dp"
-            android:background="@color/purple"
-            app:layout_constraintTop_toBottomOf="@+id/viewpager"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/app_general_margin"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_margin="@dimen/app_general_margin">
 
             <ImageView
                 android:id="@+id/back"
@@ -70,39 +40,57 @@
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/priceContainer"
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewpager"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:orientation="horizontal"
-            android:background="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            android:layout_height="350dp" />
+
+        <me.relex.circleindicator.CircleIndicator
+            android:id="@+id/indicator"
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:layout_margin="@dimen/app_general_margin"
+            android:background="@color/purple"
+            android:elevation="4dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/app_general_margin"
+            android:text="@{product.productDescription}"
+            tools:text="Nike Air Monarch IV Erkek Ayakkabısı, destek için dayanıklı deri üst kısmıyla sana rahat bir antrenman imkanı sağlar. Hafif köpük orta tabanıyla tam boy kapsüllü Air-Sole birim, uzun yürüyüşlerde yastıklama sağlar. Özellikler:  Deri üst kısımda destekleyici yüzeyler ve hava akışı sağlayan delikler bulunur,  Tam boy kapsüllü Air-Sole birim, rahatlık ve destek için yastıklama sağlar,  Sağlam kauçuk dış taban dayanıklıdır ve farklı zeminlerde tutuş sağlar," />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="@dimen/app_margin_large"
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/priceText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/app_margin_large"
-                android:text="@{price}"
-                android:textSize="@dimen/app_basket_price_text_size_large"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                android:text="@{product.getPrice()}"
+                android:textSize="@dimen/app_basket_price_text_size"
                 tools:text="1234.05 TL" />
 
-            <Button
-                android:id="@+id/clearBasket"
+            <TextView
+                android:id="@+id/zoomText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/app_margin_large"
-                android:background="@drawable/button_background"
-                android:paddingHorizontal="@dimen/app_margin_Xlarge"
-                android:text="@string/clear_basket"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                android:layout_marginHorizontal="@dimen/app_margin_large"
+                android:text="@string/detail_zoom"
+                android:textSize="@dimen/app_basket_price_text_size" />
+
+            <Button
+                android:id="@+id/addToBasket"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/purple"
+                android:padding="@dimen/app_margin_mini"
+                android:text="@string/add_to_cart"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </LinearLayout>
 </layout>

@@ -3,7 +3,6 @@ package com.example.firebaserealtimedatabaseentegration.views.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.firebasedbentegration.extensions.addTL
 import com.example.firebaserealtimedatabaseentegration.data.Product
 import com.example.firebaserealtimedatabaseentegration.databinding.ItemBasketProductViewBinding
 class BasketProductAdapter(
@@ -35,7 +34,6 @@ class BasketProductAdapter(
         RecyclerView.ViewHolder(binding.root) {
         fun bind(mapItem: Product) {
             binding.product = mapItem
-            binding.price = mapItem.productPrice.addTL()
             binding.root.setOnClickListener {
                 onClickProductDetail.invoke(mapItem)
             }

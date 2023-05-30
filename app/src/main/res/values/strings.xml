@@ -4,4 +4,5 @@
     <string name="clear_basket">Sepeti Temizle</string>
     <string name="basket_title">Sepetim</string>
     <string name="home_search_hint">Marka, ürün veya hizmet arayın</string>
+    <string name="detail_zoom">Büyütün</string>
 </resources>

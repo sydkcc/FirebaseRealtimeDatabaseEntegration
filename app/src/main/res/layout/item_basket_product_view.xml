@@ -2,15 +2,9 @@
 <layout>
 
     <data>
-
-        <variable
-            name="price"
-            type="String" />
-
         <variable
             name="product"
             type="com.example.firebaserealtimedatabaseentegration.data.Product" />
-
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -57,7 +51,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/app_margin_large"
-            android:text="@{price}"
+            android:text="@{product.getPrice()}"
             android:textSize="@dimen/app_basket_price_text_size"
             app:layout_constraintStart_toEndOf="@+id/image"
             app:layout_constraintTop_toBottomOf="@+id/name"

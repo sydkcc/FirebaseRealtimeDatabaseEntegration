@@ -1,4 +1,4 @@
-package app.presentation.base.view
+package com.example.firebaserealtimedatabaseentegration.utilities
 
 import android.os.Bundle
 import android.view.LayoutInflater

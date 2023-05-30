@@ -2,9 +2,9 @@ package com.example.firebaserealtimedatabaseentegration.views.dialog
 
 import android.os.Bundle
 import android.view.ViewGroup
-import app.presentation.base.view.BaseDialogHelper
-import app.presentation.base.view.PopupActionType
-import app.presentation.extension.load
+import com.example.firebaserealtimedatabaseentegration.utilities.BaseDialogHelper
+import com.example.firebaserealtimedatabaseentegration.utilities.PopupActionType
+import com.example.firebaserealtimedatabaseentegration.extensions.load
 import com.example.firebaserealtimedatabaseentegration.R
 import com.example.firebaserealtimedatabaseentegration.databinding.PopupImageShowBinding
 

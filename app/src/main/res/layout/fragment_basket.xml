@@ -8,7 +8,7 @@
             type="String" />
 
         <variable
-            name="price"
+            name="totalPrice"
             type="String" />
     </data>
 
@@ -86,7 +86,7 @@
                 android:adjustViewBounds="true"
                 android:orientation="vertical"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                tools:itemCount="5"
+                tools:itemCount="3"
                 tools:listitem="@layout/item_basket_product_view" />
         </com.google.android.material.card.MaterialCardView>
 
@@ -105,7 +105,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/app_margin_large"
-                android:text="@{price}"
+                android:text="@{totalPrice}"
                 android:textSize="@dimen/app_basket_price_text_size_large"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

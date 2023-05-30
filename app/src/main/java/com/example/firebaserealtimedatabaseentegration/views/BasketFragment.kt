@@ -1,7 +1,6 @@
 package com.example.firebaserealtimedatabaseentegration.views
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -30,10 +29,10 @@ class BasketFragment : Fragment() {
         viewModel.fetchObjects()
         viewModel.productList.observe(viewLifecycleOwner) { productList ->
 
-            var filteredList = productList.filter { it.isInsideBasket == "1" }
+            val filteredList = productList.filter { it.isInsideBasket == "1" }
 
             if (filteredList.isNotEmpty()) {
-                binding.price = filteredList.map { it.productPrice }.sum().addTL()
+                binding.totalPrice = filteredList.map { it.productPrice }.sum().addTL()
                 binding.count = filteredList.size.addProductString()
                 adapter = BasketProductAdapter(::onClickProductDetail)
                 adapter.setData(filteredList)
@@ -49,8 +48,6 @@ class BasketFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.back.setOnClickListener {
-//            val action = BasketFragmentDirections.actionBasketFragmentToHomeFragment()
-//            findNavController().navigate(action)
             findNavController().popBackStack()
         }
 

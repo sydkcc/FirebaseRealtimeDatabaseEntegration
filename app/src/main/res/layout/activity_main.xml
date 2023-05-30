@@ -9,7 +9,6 @@
         android:background="@color/white"
         android:orientation="vertical">
 
-
 <!--        <com.airbnb.lottie.LottieAnimationView-->
 <!--            android:id="@+id/lottie"-->
 <!--            android:layout_width="wrap_content"-->
@@ -22,64 +21,6 @@
 <!--            app:layout_constraintEnd_toEndOf="parent"-->
 <!--            app:layout_constraintStart_toStartOf="parent"-->
 <!--            app:layout_constraintTop_toTopOf="parent" />-->
-
-        <!--        <androidx.constraintlayout.helper.widget.Flow-->
-        <!--            android:id="@+id/header"-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:layout_margin="@dimen/app_general_margin"-->
-        <!--            app:constraint_referenced_ids="logo,basket"-->
-        <!--            app:flow_horizontalBias="0"-->
-        <!--            app:flow_horizontalStyle="spread"-->
-        <!--            app:flow_wrapMode="chain"-->
-        <!--            app:layout_constraintEnd_toEndOf="parent"-->
-        <!--            app:layout_constraintStart_toStartOf="parent"-->
-        <!--            app:layout_constraintTop_toTopOf="parent" />-->
-
-        <!--        <ImageView-->
-        <!--            android:id="@+id/logo"-->
-        <!--            android:layout_width="150dp"-->
-        <!--            android:layout_height="50dp"-->
-        <!--            android:src="@drawable/pazarama_main"-->
-        <!--            app:layout_constraintStart_toStartOf="parent" />-->
-
-        <!--        <ImageView-->
-        <!--            android:id="@+id/basket"-->
-        <!--            android:layout_width="30dp"-->
-        <!--            android:layout_height="30dp"-->
-        <!--            android:src="@drawable/shopping_cart"-->
-        <!--            app:layout_constraintEnd_toEndOf="parent" />-->
-
-
-        <!--        <TextView-->
-        <!--            android:id="@+id/search"-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:layout_margin="@dimen/app_general_margin"-->
-        <!--            android:background="#F6F0F0"-->
-        <!--            android:padding="20dp"-->
-        <!--            android:text="deneme"-->
-        <!--            app:layout_constraintEnd_toEndOf="parent"-->
-        <!--            app:layout_constraintStart_toStartOf="parent"-->
-        <!--            app:layout_constraintTop_toBottomOf="@+id/header" />-->
-
-
-        <!--        <androidx.recyclerview.widget.RecyclerView-->
-        <!--            android:id="@+id/rcyProductList"-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:layout_margin="@dimen/app_general_margin"-->
-        <!--            android:orientation="vertical"-->
-        <!--            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"-->
-        <!--            app:layout_constraintEnd_toEndOf="parent"-->
-        <!--            app:layout_constraintStart_toStartOf="parent"-->
-        <!--            app:layout_constraintTop_toBottomOf="@+id/search"-->
-        <!--            app:spanCount="2"-->
-        <!--            tools:itemCount="10"-->
-        <!--            tools:listitem="@layout/item_product_view" />-->
-
-        <!--        android:name="androidx.navigation.fragment.NavHostFragment"-->
-        <!--        -->
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/nav_host_fragment"
@@ -95,29 +36,5 @@
             tools:layout="@layout/activity_main"
             tools:layout_editor_absoluteX="1dp"
             tools:layout_editor_absoluteY="1dp" />
-
-        <!--        <androidx.fragment.app.FragmentContainerView-->
-        <!--            android:id="@+id/nav_host_fragment"-->
-        <!--            android:name="androidx.navigation.fragment.NavHostFragment"-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="match_parent"-->
-        <!--            app:defaultNavHost="true"-->
-        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
-        <!--            app:layout_constraintLeft_toLeftOf="parent"-->
-        <!--            app:layout_constraintRight_toRightOf="parent"-->
-        <!--            app:layout_constraintTop_toTopOf="parent"-->
-        <!--            app:navGraph="@navigation/nav_graph" />-->
-
-
-        <!--        <fragment-->
-        <!--            android:layout_width="0dp"-->
-        <!--            android:layout_height="0dp"-->
-        <!--            app:defaultNavHost="true"-->
-        <!--            android:id="@+id/nav_host_fragment"-->
-        <!--            android:name="androidx.navigation.fragment.NavHostFragment"-->
-        <!--            app:navGraph="@navigation/nav_graph"-->
-        <!--            app:layout_constraintStart_toStartOf="parent"-->
-        <!--            app:layout_constraintEnd_toEndOf="parent"-->
-        <!--            app:layout_constraintTop_toTopOf="parent"/>-->
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

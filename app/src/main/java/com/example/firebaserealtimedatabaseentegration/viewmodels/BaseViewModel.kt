@@ -15,7 +15,7 @@ import kotlinx.coroutines.launch
 open class BaseViewModel :ViewModel() {
 
     val productList = MutableLiveData<List<Product>>()
-    val database = FirebaseDatabase.getInstance()
+    private val database = FirebaseDatabase.getInstance()
     val myRef = database.getReference("products")
 
     fun fetchObjects() {
@@ -37,8 +37,6 @@ open class BaseViewModel :ViewModel() {
                     val productQuantity = productDict?.get("productQuantity") as? Int
                     val productInfoList = productDict?.get("productInfoList") as? Map<*, *>
 
-
-
                     val productImages = ProductImages(
                         image1 = productImagesDict?.get("image1") as? String ?: "",
                         image2 = productImagesDict?.get("image2") as? String ?: ""
@@ -57,17 +55,13 @@ open class BaseViewModel :ViewModel() {
                     data.add(product)
                 }
                 filteredItems = data
-
-                Log.d("Damacana", filteredItems.first().productName)
-                Log.d("Damacana2", filteredItems.size.toString())
-
                 viewModelScope.launch {
                     productList.postValue(filteredItems)
                 }
             }
 
             override fun onCancelled(error: DatabaseError) {
-                Log.d("", error.getMessage());
+                Log.d("", error.message);
             }
         })
 
