@@ -48,6 +48,7 @@ class ProductDetailFragment : Fragment() {
         viewModel.productList.observe(viewLifecycleOwner) { productList ->
             val product = productList[productId]
             this.product = product
+            binding.product = product
             images.add(product.productImages.image1)
             images.add(product.productImages.image2)
 

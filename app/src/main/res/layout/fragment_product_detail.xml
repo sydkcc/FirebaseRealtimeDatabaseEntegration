@@ -57,6 +57,13 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textSize="@dimen/app_basket_price_text_size"
+            android:layout_margin="@dimen/app_general_margin"
+            android:text="@{product.productName}"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_margin="@dimen/app_general_margin"
             android:text="@{product.productDescription}"
             tools:text="Nike Air Monarch IV Erkek Ayakkabısı, destek için dayanıklı deri üst kısmıyla sana rahat bir antrenman imkanı sağlar. Hafif köpük orta tabanıyla tam boy kapsüllü Air-Sole birim, uzun yürüyüşlerde yastıklama sağlar. Özellikler:  Deri üst kısımda destekleyici yüzeyler ve hava akışı sağlayan delikler bulunur,  Tam boy kapsüllü Air-Sole birim, rahatlık ve destek için yastıklama sağlar,  Sağlam kauçuk dış taban dayanıklıdır ve farklı zeminlerde tutuş sağlar," />
