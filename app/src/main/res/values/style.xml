@@ -9,7 +9,7 @@
 
     <style name="SearchTextBar" parent="Widget.AppCompat.EditText">
         <item name="android:textColor">@android:color/black</item>
-        <item name="android:textColorHint">@color/light_gray</item>
+        <item name="android:textColorHint">#C6C3C3</item>
         <item name="android:textSize">@dimen/search_hint_text_size</item>
         <item name="android:drawableStart">@drawable/ic_search_light_gray</item>
         <item name="android:drawablePadding">5dp</item>

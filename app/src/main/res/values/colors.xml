@@ -12,4 +12,5 @@
     <color name="gray">#757171</color>
     <color name="light_gray">#CCC8C8</color>
     <color name="very_light_gray">#FBF8F8</color>
+    <color name="rate_progress_tint_color">#FFCC01</color>
 </resources>

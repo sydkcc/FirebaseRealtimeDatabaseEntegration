@@ -5,4 +5,7 @@
     <string name="basket_title">Sepetim</string>
     <string name="home_search_hint">Marka, ürün veya hizmet arayın</string>
     <string name="detail_zoom">Büyütün</string>
+    <string name="delete_product">Ürünü Sil</string>
+    <string name="empty_basket">Sepetinizde Ürün Bulunmamaktadır.</string>
+    <string name="continue_shopping">Alışverişe Devam Et</string>
 </resources>

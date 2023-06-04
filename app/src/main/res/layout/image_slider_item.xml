@@ -13,11 +13,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
+<!--        <com.example.firebaserealtimedatabaseentegration.utilities.ZoomableImageView-->
+<!--            android:id="@+id/iv_images"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"/>-->
+
+        <com.otaliastudios.zoom.ZoomImageView
             android:id="@+id/iv_images"
             android:layout_width="match_parent"
-            android:layout_height="350dp"
-            android:scaleType="fitCenter" />
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true"/>
     </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

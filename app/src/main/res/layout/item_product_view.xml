@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -8,64 +10,93 @@
             type="com.example.firebaserealtimedatabaseentegration.data.Product" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/app_margin_xmini"
         android:layout_marginVertical="@dimen/app_general_margin_medium"
-        android:layout_height="wrap_content">
+        android:background="@color/white"
+        android:elevation="@dimen/app_elevation"
+        app:strokeColor="@color/light_gray"
+        app:strokeWidth="0.5dp">
 
-        <ImageView
-            android:id="@+id/image"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:scaleType="fitCenter"
-            app:imageFromUrl="@{product.productImages.image1}"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:src="@drawable/deneme_product_image" />
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/productTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/app_general_margin"
-            android:ellipsize="end"
-            android:maxLines="1"
-            android:text="@{product.productName}"
-            android:textColor="@color/black"
-            android:textSize="15sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/image"
-            tools:text="Bershka Renkli Metalik Askılı Çanta" />
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:scaleType="fitCenter"
+                app:imageFromUrl="@{product.productImages.image1}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/deneme_product_image" />
 
-        <TextView
-            android:id="@+id/price"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/app_general_margin"
-            android:text="@{product.getPrice}"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/productTitle"
-            tools:text="1234.05 TL" />
+            <TextView
+                android:id="@+id/productTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/app_general_margin"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@{product.productName}"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/image"
+                tools:text="Bershka Renkli Metalik Askılı Çanta" />
 
-        <Button
-            android:id="@+id/addToCart"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/app_general_margin"
-            android:background="@drawable/button_background"
-            android:padding="@dimen/app_general_margin"
-            android:textColor="@color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/price"
-            android:text="@string/add_to_cart"
-            tools:text="@string/add_to_cart" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/app_general_margin"
+                android:text="@{product.getPrice}"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/productTitle"
+                tools:text="1234.05 TL" />
+
+            <RatingBar
+                android:id="@+id/rate"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="@dimen/app_general_margin"
+                android:isIndicator="true"
+                android:numStars="5"
+                android:progressTint="@color/rate_progress_tint_color"
+                android:scaleX="1"
+                android:rating="@{product.getRate()}"
+                android:scaleY="1"
+                android:stepSize="0.1"
+                android:transformPivotX="0dp"
+                android:transformPivotY="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/addToCart"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/price" />
+
+            <Button
+                android:id="@+id/addToCart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/app_general_margin_medium"
+                android:background="@drawable/button_background"
+                android:paddingHorizontal="@dimen/app_margin_large"
+                android:text="@string/add_to_cart"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rate"
+                tools:text="@string/add_to_cart" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
 </layout>

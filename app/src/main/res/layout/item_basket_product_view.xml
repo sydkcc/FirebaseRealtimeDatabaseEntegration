@@ -2,6 +2,7 @@
 <layout>
 
     <data>
+
         <variable
             name="product"
             type="com.example.firebaserealtimedatabaseentegration.data.Product" />
@@ -10,6 +11,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
+        android:background="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -57,10 +59,20 @@
             app:layout_constraintTop_toBottomOf="@+id/name"
             tools:text="1234.05 TL" />
 
+        <Button
+            android:id="@+id/delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/app_general_margin_medium"
+            android:text="@string/delete_product"
+            android:textSize="@dimen/app_basket_name_text_size_mini"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:text="@string/delete_product" />
+
         <View
             android:layout_width="match_parent"
             android:layout_height="0.3dp"
-            android:layout_margin="@dimen/app_margin_mini"
             android:background="@color/light_gray"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

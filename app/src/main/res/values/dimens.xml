@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="app_general_margin">12dp</dimen>
+    <dimen name="app_general_margin">10dp</dimen>
     <dimen name="app_general_margin_medium">15dp</dimen>
     <dimen name="app_margin_mini">8dp</dimen>
+    <dimen name="app_margin_xmini">4dp</dimen>
     <dimen name="app_margin_large">20dp</dimen>
     <dimen name="app_margin_Xlarge">36dp</dimen>
+    <dimen name="app_elevation">36dp</dimen>
     <dimen name="app_basket_name_text_size">14sp</dimen>
+    <dimen name="app_basket_name_text_size_mini">12sp</dimen>
     <dimen name="app_basket_price_text_size">18sp</dimen>
     <dimen name="app_basket_price_text_size_large">22sp</dimen>
     <dimen name="search_hint_text_size">14sp</dimen>

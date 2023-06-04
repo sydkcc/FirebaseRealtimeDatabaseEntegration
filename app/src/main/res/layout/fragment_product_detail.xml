@@ -4,47 +4,45 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="product"
             type="com.example.firebaserealtimedatabaseentegration.data.Product" />
     </data>
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/app_general_margin">
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_margin="@dimen/app_general_margin"
+            android:padding="@dimen/app_margin_mini"
+            android:src="@drawable/back_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/back"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_margin="@dimen/app_margin_mini"
-                android:padding="@dimen/app_margin_mini"
-                android:src="@drawable/back_button"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/basket"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/shopping_cart"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
+        <ImageView
+            android:id="@+id/basket"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="@dimen/app_general_margin"
+            android:src="@drawable/shopping_cart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/viewpager"
             android:layout_width="match_parent"
-            android:layout_height="350dp" />
+            android:layout_height="350dp"
+            android:contentDescription="Pazarama"
+            app:layout_constraintBottom_toTopOf="@+id/indicator"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/back"/>
 
         <me.relex.circleindicator.CircleIndicator
             android:id="@+id/indicator"
@@ -52,52 +50,103 @@
             android:layout_height="15dp"
             android:layout_margin="@dimen/app_general_margin"
             android:background="@color/purple"
-            android:elevation="4dp" />
+            android:elevation="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viewpager" />
 
         <TextView
+            android:id="@+id/productName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/app_basket_price_text_size"
             android:layout_margin="@dimen/app_general_margin"
-            android:text="@{product.productName}"/>
+            android:text="@{product.productName}"
+            android:textSize="@dimen/app_basket_price_text_size"
+            app:layout_constraintBottom_toTopOf="@+id/rate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/indicator"
+            tools:text="Nike Air Monarch" />
+
+        <RatingBar
+            android:id="@+id/rate"
+            style="?android:attr/ratingBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:isIndicator="true"
+            android:numStars="5"
+            android:progressTint="@color/rate_progress_tint_color"
+            android:rating="@{product.getRate()}"
+
+            android:stepSize="0.1"
+            app:layout_constraintBottom_toTopOf="@+id/productDesc"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/productName" />
 
         <TextView
+            android:id="@+id/productDesc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/app_general_margin"
             android:text="@{product.productDescription}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rate"
             tools:text="Nike Air Monarch IV Erkek Ayakkabısı, destek için dayanıklı deri üst kısmıyla sana rahat bir antrenman imkanı sağlar. Hafif köpük orta tabanıyla tam boy kapsüllü Air-Sole birim, uzun yürüyüşlerde yastıklama sağlar. Özellikler:  Deri üst kısımda destekleyici yüzeyler ve hava akışı sağlayan delikler bulunur,  Tam boy kapsüllü Air-Sole birim, rahatlık ve destek için yastıklama sağlar,  Sağlam kauçuk dış taban dayanıklıdır ve farklı zeminlerde tutuş sağlar," />
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.9" />
+
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_margin="@dimen/app_margin_large"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:elevation="@dimen/app_general_margin_medium"
+            android:orientation="horizontal"
+            app:layout_constrainedHeight="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/guidelineBottom">
 
-            <TextView
-                android:id="@+id/priceText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@{product.getPrice()}"
-                android:textSize="@dimen/app_basket_price_text_size"
-                tools:text="1234.05 TL" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="@dimen/app_margin_large"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/guidelineBottom">
 
-            <TextView
-                android:id="@+id/zoomText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/app_margin_large"
-                android:text="@string/detail_zoom"
-                android:textSize="@dimen/app_basket_price_text_size" />
+                <TextView
+                    android:id="@+id/priceText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{product.getPrice()}"
+                    android:textSize="@dimen/app_basket_price_text_size"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="1234.05 TL" />
 
-            <Button
-                android:id="@+id/addToBasket"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:background="@color/purple"
-                android:padding="@dimen/app_margin_mini"
-                android:text="@string/add_to_cart"
-                android:textColor="@color/white" />
-        </LinearLayout>
-    </LinearLayout>
+                <Button
+                    android:id="@+id/addToBasket"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@color/purple"
+                    android:padding="@dimen/app_margin_mini"
+                    android:text="@string/add_to_cart"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
