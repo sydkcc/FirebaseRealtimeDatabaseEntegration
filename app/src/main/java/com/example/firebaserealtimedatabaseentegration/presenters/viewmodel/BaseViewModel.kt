@@ -7,7 +7,6 @@ import androidx.lifecycle.viewModelScope
 import com.example.firebaserealtimedatabaseentegration.data.IBasketActions
 import com.example.firebaserealtimedatabaseentegration.data.Product
 import com.example.firebaserealtimedatabaseentegration.data.ProductImages
-import com.example.firebaserealtimedatabaseentegration.presenters.presenter.views.BasketFragment
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -79,7 +78,9 @@ open class BaseViewModel() : ViewModel(), IBasketActions {
         }
     }
 
-    override fun deleteProductAction() {
+    override fun deleteProductAction(id: String) {
+        myRef.child("product$id/isInsideBasket").setValue("0")
     }
+
 
 }

@@ -67,7 +67,8 @@ class BasketFragment : Fragment() {
     }
 
     private fun onClickProductDelete(product: Product) {
-        viewModel.deleteFromCart(product.productID)
+//        viewModel.deleteFromCart(product.productID)
+        viewModel.deleteProductAction(product.productID)
         adapter.items.remove(product)
         binding.totalPrice = adapter.items.sumOf { it.productPrice }.format(2).addTL()
         binding.count = adapter.items.size.addProductString()
